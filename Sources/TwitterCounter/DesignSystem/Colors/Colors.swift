@@ -22,10 +22,11 @@ extension DesignSystem {
                 return rgb(red: 230, green: 246, blue: 254)
             }
         }
+        private func rgb(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1) -> UIColor {
+            return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: alpha)
+        }
     }
     
-    private func rgb(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1) -> UIColor {
-        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: alpha)
-    }
+    
 }
 
