@@ -7,8 +7,7 @@
 
 import Foundation
 import UIKit
-
-@IBDesignable class CharactersView : NibLoadingView {
+ class CharactersView : NibLoadingView {
  // MARK: - private Outlets
     @IBOutlet private weak var backTitelView: UIView!
     @IBOutlet private weak var descriptionLbl: UILabel!
@@ -19,7 +18,7 @@ import UIKit
     // MARK: - public properties
     
     // MARK: - titel text
-    @IBInspectable public var titel: String {
+    public var titel: String {
         set {
             self.titel = newValue
         }
@@ -29,7 +28,7 @@ import UIKit
     }
     
     // MARK: - description Text
-    @IBInspectable public var descriptionText: String {
+    public var descriptionText: String {
         set {
             self.descriptionText = newValue
         }
@@ -39,7 +38,7 @@ import UIKit
     }
     
     // MARK: - background of title view
-    @IBInspectable public var backgroundColorOfTitle: UIColor {
+    public var backgroundColorOfTitle: UIColor {
         set {
             self.backgroundColorOfTitle = newValue
         }
@@ -60,21 +59,19 @@ import UIKit
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setData()
       
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setData()
        
     }
     // MARK: - set data from init
-    private func setData(){
+     public func setData(title :String , description :String , backgroundColorOfTitle: UIColor){
         self.containerView.borderWidth = 2
-        titleLbl.text = self.titel
-        descriptionLbl.text = self.descriptionText
-        backTitelView.backgroundColor = self.backgroundColorOfTitle
-        self.containerView.borderColor = self.backgroundColorOfTitle
+        titleLbl.text = title
+        descriptionLbl.text = description
+        backTitelView.backgroundColor = backgroundColorOfTitle
+        self.containerView.borderColor = backgroundColorOfTitle
     }
 }

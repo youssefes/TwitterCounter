@@ -14,8 +14,12 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TwitterCounterVC" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TwitterCounterVC" customModule="AgoraDemo" customModuleProvider="target">
             <connections>
+                <outlet property="characterType" destination="fLd-PR-PXL" id="AC2-pi-ywe"/>
+                <outlet property="charactersRemain" destination="aSn-1I-1ku" id="0XJ-kv-DxE"/>
+                <outlet property="logoIcon" destination="PNf-zS-koQ" id="dLk-x9-ZnF"/>
+                <outlet property="postTweetBtn" destination="6L8-AT-R5L" id="pXP-Iu-QzV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,7 +34,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EUd-8q-rxn">
                     <rect key="frame" x="16" y="154" width="382" height="180"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-PR-PXL" customClass="CharactersView" customModule="TwitterCounter">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-PR-PXL" customClass="CharactersView" customModule="AgoraDemo" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="181" height="180"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
@@ -41,7 +45,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSn-1I-1ku" customClass="CharactersView" customModule="TwitterCounter">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSn-1I-1ku" customClass="CharactersView" customModule="AgoraDemo" customModuleProvider="target">
                             <rect key="frame" x="201" y="0.0" width="181" height="180"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
@@ -57,35 +61,65 @@
                         <constraint firstAttribute="height" constant="180" id="WWP-US-x4o"/>
                     </constraints>
                 </stackView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nzv-Qn-yyU">
-                    <rect key="frame" x="20" y="358" width="378" height="280"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kiB-Xh-wwP">
+                    <rect key="frame" x="16" y="358" width="382" height="240"/>
+                    <subviews>
+                        <textView multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nzv-Qn-yyU">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="240"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" systemColor="labelColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                    <point key="value" x="10" y="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="280" id="liu-JH-xmg"/>
+                        <constraint firstAttribute="trailing" secondItem="Nzv-Qn-yyU" secondAttribute="trailing" id="2Yi-eK-NsM"/>
+                        <constraint firstItem="Nzv-Qn-yyU" firstAttribute="top" secondItem="kiB-Xh-wwP" secondAttribute="top" id="DdV-7O-nd2"/>
+                        <constraint firstAttribute="height" priority="250" constant="240" id="PzA-uf-DrG"/>
+                        <constraint firstAttribute="bottom" secondItem="Nzv-Qn-yyU" secondAttribute="bottom" id="UIX-uO-Ouv"/>
+                        <constraint firstItem="Nzv-Qn-yyU" firstAttribute="leading" secondItem="kiB-Xh-wwP" secondAttribute="leading" id="YhJ-to-V98"/>
                     </constraints>
-                    <color key="textColor" systemColor="labelColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                             <color key="value" systemColor="labelColor"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
-                            <point key="value" x="0.0" y="0.0"/>
-                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                             <real key="value" value="0.20000000000000001"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                            <point key="value" x="0.0" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                            <real key="value" value="5"/>
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                </textView>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ab-UN-2xD">
-                    <rect key="frame" x="16" y="662" width="77" height="37"/>
+                    <rect key="frame" x="16" y="622" width="77" height="34"/>
                     <color key="backgroundColor" red="0.0" green="0.66274509803921566" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" name="DINNextLTArabic-Bold" family="DIN Next LT Arabic" pointSize="14"/>
-                    <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                    <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="8"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Copy Text"/>
                     <userDefinedRuntimeAttributes>
@@ -95,10 +129,10 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5r-Zn-NYx">
-                    <rect key="frame" x="318" y="662" width="80" height="37"/>
+                    <rect key="frame" x="318" y="622" width="80" height="34"/>
                     <color key="backgroundColor" systemColor="systemRedColor"/>
                     <fontDescription key="fontDescription" name="DINNextLTArabic-Bold" family="DIN Next LT Arabic" pointSize="14"/>
-                    <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                    <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="8"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Clear Text"/>
                     <userDefinedRuntimeAttributes>
@@ -107,13 +141,19 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6L8-AT-R5L">
-                    <rect key="frame" x="20" y="723" width="378" height="56"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6L8-AT-R5L">
+                    <rect key="frame" x="16" y="680" width="382" height="56"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="Whx-uS-yib"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <fontDescription key="fontDescription" name="DINNextLTArabic-Bold" family="DIN Next LT Arabic" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Post tweet"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -121,19 +161,20 @@
             <constraints>
                 <constraint firstItem="P5r-Zn-NYx" firstAttribute="centerY" secondItem="8ab-UN-2xD" secondAttribute="centerY" id="0PY-sg-p9F"/>
                 <constraint firstItem="6L8-AT-R5L" firstAttribute="top" secondItem="8ab-UN-2xD" secondAttribute="bottom" constant="24" id="19O-fc-1M3"/>
+                <constraint firstItem="6L8-AT-R5L" firstAttribute="trailing" secondItem="EUd-8q-rxn" secondAttribute="trailing" id="4pC-5w-k2S"/>
                 <constraint firstItem="8ab-UN-2xD" firstAttribute="leading" secondItem="EUd-8q-rxn" secondAttribute="leading" id="9RQ-cL-kaB"/>
-                <constraint firstItem="6L8-AT-R5L" firstAttribute="leading" secondItem="Nzv-Qn-yyU" secondAttribute="leading" id="JGG-gQ-VBg"/>
-                <constraint firstItem="8ab-UN-2xD" firstAttribute="top" secondItem="Nzv-Qn-yyU" secondAttribute="bottom" constant="24" id="Sc6-EU-k9v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6L8-AT-R5L" secondAttribute="bottom" constant="20" id="BwY-Jr-h2G"/>
+                <constraint firstItem="6L8-AT-R5L" firstAttribute="leading" secondItem="EUd-8q-rxn" secondAttribute="leading" id="V9b-rh-QE4"/>
+                <constraint firstItem="EUd-8q-rxn" firstAttribute="leading" secondItem="kiB-Xh-wwP" secondAttribute="leading" id="VAn-AR-Eah"/>
                 <constraint firstItem="PNf-zS-koQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WbH-Ii-Kpv"/>
-                <constraint firstItem="Nzv-Qn-yyU" firstAttribute="top" secondItem="EUd-8q-rxn" secondAttribute="bottom" constant="24" id="eqq-40-KdS"/>
+                <constraint firstItem="kiB-Xh-wwP" firstAttribute="top" secondItem="EUd-8q-rxn" secondAttribute="bottom" constant="24" id="e1q-8Z-qui"/>
+                <constraint firstItem="kiB-Xh-wwP" firstAttribute="trailing" secondItem="EUd-8q-rxn" secondAttribute="trailing" id="eJq-x5-GA9"/>
                 <constraint firstItem="EUd-8q-rxn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="iEi-rt-sVC"/>
-                <constraint firstItem="Nzv-Qn-yyU" firstAttribute="trailing" secondItem="EUd-8q-rxn" secondAttribute="trailing" id="jyb-9J-KoN"/>
-                <constraint firstItem="Nzv-Qn-yyU" firstAttribute="leading" secondItem="EUd-8q-rxn" secondAttribute="leading" constant="4" id="lWp-Ob-siw"/>
-                <constraint firstItem="6L8-AT-R5L" firstAttribute="trailing" secondItem="Nzv-Qn-yyU" secondAttribute="trailing" id="mRs-8X-0Oy"/>
                 <constraint firstItem="PNf-zS-koQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="ofQ-jo-nap"/>
+                <constraint firstItem="8ab-UN-2xD" firstAttribute="top" secondItem="kiB-Xh-wwP" secondAttribute="bottom" constant="24" id="u0R-Me-isM"/>
                 <constraint firstItem="EUd-8q-rxn" firstAttribute="top" secondItem="PNf-zS-koQ" secondAttribute="bottom" constant="20" id="xGP-2o-yMh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EUd-8q-rxn" secondAttribute="trailing" constant="16" id="xZ4-f3-jM3"/>
-                <constraint firstItem="P5r-Zn-NYx" firstAttribute="trailing" secondItem="Nzv-Qn-yyU" secondAttribute="trailing" id="yBu-gl-chY"/>
+                <constraint firstItem="P5r-Zn-NYx" firstAttribute="trailing" secondItem="EUd-8q-rxn" secondAttribute="trailing" id="yJg-4m-JeI"/>
             </constraints>
             <point key="canvasLocation" x="139" y="84"/>
         </view>
