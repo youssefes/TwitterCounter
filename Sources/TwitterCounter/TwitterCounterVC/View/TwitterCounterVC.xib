@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TwitterCounterVC" customModule="AgoraDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TwitterCounterVC" customModule="TwitterCounter">
             <connections>
                 <outlet property="characterType" destination="fLd-PR-PXL" id="AC2-pi-ywe"/>
                 <outlet property="charactersRemain" destination="aSn-1I-1ku" id="0XJ-kv-DxE"/>
