@@ -16,7 +16,7 @@ public class TwitterCounterVC: UIViewController {
     private var  presenter : TwitterCounterPresenter!
     public override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+       // setupView()
     }
     
     func setupView(){
