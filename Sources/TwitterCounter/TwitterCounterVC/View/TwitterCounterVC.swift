@@ -22,8 +22,8 @@ public class TwitterCounterVC: UIViewController {
     func setupView(){
         title = "Twitter character count"
         presenter = TwitterCounterPresenter()
-        postTweetBtn.backgroundColor = UIColor.twitterColor.main
-        logoIcon.tintColor = UIColor.twitterColor.background
+//        postTweetBtn.backgroundColor = UIColor.twitterColor.main
+//        logoIcon.tintColor = UIColor.twitterColor.background
         characterType.setData(title: "Characters Typed", description: "0 / 280", backgroundColorOfTitle: UIColor.twitterColor.background)
         
         charactersRemain.setData(title: "Characters Remaining", description: "280" , backgroundColorOfTitle: UIColor.twitterColor.background)
