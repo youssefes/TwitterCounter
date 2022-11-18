@@ -18,7 +18,7 @@ public class TwitterCounterVC: UIViewController {
     
     func setupView(){
         presenter = TwitterCounterPresenter()
-        logoIcon.tintColor = DesignSystem.Colors.Main.color
+        //logoIcon.tintColor = DesignSystem.Colors.Main.color
     }
     
     
