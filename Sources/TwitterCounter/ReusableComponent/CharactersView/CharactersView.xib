@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharactersView" customModule="AgoraDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharactersView" customModule="TwitterCounter">
             <connections>
                 <outlet property="backTitelView" destination="izo-Ar-XJq" id="CYK-hX-b1m"/>
                 <outlet property="containerView" destination="iN0-l3-epB" id="iYp-sa-x18"/>
