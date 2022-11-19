@@ -50,10 +50,12 @@ public class TwitterCounterVC: UIViewController {
         presenter = TwitterCounterPresenter()
     }
     @IBAction func copyText(_ sender: Any) {
-        copyText()
+        let text =  tweetTextView.text ?? ""
+        copyText(text: text)
     }
     @IBAction func clearText(_ sender: Any) {
-        clearText()
+        if tweetTextView.text.isEmpty {return}
+        clearText(text: tweetTextView.text)
     }
 }
 
@@ -62,21 +64,23 @@ extension TwitterCounterVC : UITextViewDelegate {
     
     public func textViewDidChange(_ textView: UITextView) {
         let text = textView.text ?? ""
-        charactersRemain.updateDescription(text: presenter.characterRamainData(text: text))
-        characterType.updateDescription(text: presenter.characterTypeData(text: text))
+        charactersRemain.updateDescription(text: "\(presenter.characterRamainData(text: text))")
+        characterType.updateDescription(text: "\(presenter.characterTypeData(text: text)) / \(presenter.cherecterLength)")
     }
     
     public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         return  presenter.validCherecter(text: textView.text, replacementText: text, range: range)
    }
     
-    func clearText(){
+    func clearText(text : String){
+        if text.isEmpty {return}
         tweetTextView.text = ""
-        characterType.updateDescription(text: presenter.characterTypeData(text: ""))
-        charactersRemain.updateDescription(text: presenter.characterRamainData(text: ""))
+        characterType.updateDescription(text: "\(presenter.characterTypeData(text: ""))")
+        charactersRemain.updateDescription(text: "\(presenter.characterRamainData(text: ""))")
     }
     
-    func copyText(){
-        UIPasteboard.general.string = tweetTextView.text
+    func copyText(text : String){
+        if text.isEmpty {return}
+        UIPasteboard.general.string = text
     }
 }

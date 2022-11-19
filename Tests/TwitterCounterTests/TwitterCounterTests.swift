@@ -1,10 +1,27 @@
 import XCTest
 
+@testable import TwitterCounter
 
 final class TwitterCounterTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
+    
+    var twitterCountervc : TwitterCounterVC!
+    override func setUpWithError() throws {
+        twitterCountervc = TwitterCounterVC()
     }
+    
+    override func tearDownWithError() throws {
+        twitterCountervc = nil
+    }
+    
+    func test_copyText() {
+        let text = "ueyuetyuet"
+        XCTAssertFalse(text.isEmpty)
+        twitterCountervc.copyText(text: text)
+    }
+    
+    func test_clearText() {
+        let text = "ueyuetyuet"
+        twitterCountervc.clearText(text: text)
+    }
+    
 }
