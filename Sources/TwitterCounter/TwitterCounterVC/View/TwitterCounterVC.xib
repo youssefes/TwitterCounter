@@ -35,7 +35,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EUd-8q-rxn">
                     <rect key="frame" x="16" y="154" width="382" height="108"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-PR-PXL" customClass="CharactersView">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-PR-PXL" customClass="CharactersView" customModule="TwitterCounter">
                             <rect key="frame" x="0.0" y="0.0" width="181" height="108"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
@@ -46,7 +46,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSn-1I-1ku" customClass="CharactersView">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSn-1I-1ku" customClass="CharactersView" customModule="TwitterCounter">
                             <rect key="frame" x="201" y="0.0" width="181" height="108"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
