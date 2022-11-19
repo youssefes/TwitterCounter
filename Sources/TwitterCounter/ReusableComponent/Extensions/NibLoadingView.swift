@@ -34,8 +34,8 @@ class NibLoadingView: UIView {
     }
 
     private func loadViewFromNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
+//        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: String(describing: type(of: self)), bundle: .module)
         let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
 
         return nibView
