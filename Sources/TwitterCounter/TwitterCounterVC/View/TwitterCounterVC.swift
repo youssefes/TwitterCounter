@@ -17,11 +17,11 @@ public class TwitterCounterVC: UIViewController {
     private var  presenter : TwitterCounterProtocol!
     private var color : UIColor = DesignSystem.Colors.Main.color
     
-    convenience init() {
+   public convenience init() {
         self.init(color: DesignSystem.Colors.Main.color)
     }
     
-    init(color: UIColor) {
+    public init(color: UIColor) {
         self.color = color
         super.init(nibName: nil, bundle: nil)
     }
