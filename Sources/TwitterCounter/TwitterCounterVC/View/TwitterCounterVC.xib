@@ -14,12 +14,13 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TwitterCounterVC" customModule="TwitterCounter">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TwitterCounterVC" customModule="AgoraDemo" customModuleProvider="target">
             <connections>
                 <outlet property="characterType" destination="fLd-PR-PXL" id="AC2-pi-ywe"/>
                 <outlet property="charactersRemain" destination="aSn-1I-1ku" id="0XJ-kv-DxE"/>
                 <outlet property="logoIcon" destination="PNf-zS-koQ" id="dLk-x9-ZnF"/>
                 <outlet property="postTweetBtn" destination="6L8-AT-R5L" id="pXP-Iu-QzV"/>
+                <outlet property="tweetTextView" destination="Nzv-Qn-yyU" id="lSA-c9-cG4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,10 +33,10 @@
                     <rect key="frame" x="177" y="74" width="60" height="60"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EUd-8q-rxn">
-                    <rect key="frame" x="16" y="154" width="382" height="180"/>
+                    <rect key="frame" x="16" y="154" width="382" height="108"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-PR-PXL" customClass="CharactersView" customModule="TwitterCounter">
-                            <rect key="frame" x="0.0" y="0.0" width="181" height="180"/>
+                            <rect key="frame" x="0.0" y="0.0" width="181" height="108"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="titel" value="Characters Typed"/>
@@ -46,7 +47,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSn-1I-1ku" customClass="CharactersView" customModule="TwitterCounter">
-                            <rect key="frame" x="201" y="0.0" width="181" height="180"/>
+                            <rect key="frame" x="201" y="0.0" width="181" height="108"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorOfTitle">
@@ -58,11 +59,11 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="180" id="WWP-US-x4o"/>
+                        <constraint firstAttribute="height" constant="108" id="WWP-US-x4o"/>
                     </constraints>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kiB-Xh-wwP">
-                    <rect key="frame" x="16" y="358" width="382" height="240"/>
+                    <rect key="frame" x="16" y="286" width="382" height="240"/>
                     <subviews>
                         <textView multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nzv-Qn-yyU">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="240"/>
@@ -116,7 +117,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ab-UN-2xD">
-                    <rect key="frame" x="16" y="622" width="79" height="30"/>
+                    <rect key="frame" x="16" y="550" width="77" height="34"/>
                     <color key="backgroundColor" red="0.0" green="0.66274509803921566" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" name="DINNextLTArabic-Bold" family="DIN Next LT Arabic" pointSize="14"/>
                     <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="8"/>
@@ -127,9 +128,12 @@
                             <real key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="copyText:" destination="-1" eventType="touchUpInside" id="WUv-AG-B2j"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5r-Zn-NYx">
-                    <rect key="frame" x="319" y="622" width="79" height="30"/>
+                    <rect key="frame" x="318" y="550" width="80" height="34"/>
                     <color key="backgroundColor" systemColor="systemRedColor"/>
                     <fontDescription key="fontDescription" name="DINNextLTArabic-Bold" family="DIN Next LT Arabic" pointSize="14"/>
                     <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="8"/>
@@ -140,9 +144,12 @@
                             <real key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clearText:" destination="-1" eventType="touchUpInside" id="nHc-z7-pyA"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6L8-AT-R5L">
-                    <rect key="frame" x="16" y="676" width="382" height="56"/>
+                    <rect key="frame" x="16" y="608" width="382" height="56"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="Whx-uS-yib"/>
                     </constraints>
