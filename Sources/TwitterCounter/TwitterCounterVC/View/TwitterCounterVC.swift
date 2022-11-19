@@ -26,9 +26,6 @@ public class TwitterCounterVC: UIViewController {
         super.init(nibName: nil, bundle: .module)
     }
     
-    public init(){
-        super.init(nibName: nil, bundle: .module)
-    }
     
     // if this view controller is loaded from a storyboard, imageURL will be nil
     
