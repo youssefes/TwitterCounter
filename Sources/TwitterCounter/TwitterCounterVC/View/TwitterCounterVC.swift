@@ -23,7 +23,11 @@ public class TwitterCounterVC: UIViewController {
     
     public init(color: UIColor) {
         self.color = color
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: .module)
+    }
+    
+    public init(){
+        super.init(nibName: nil, bundle: .module)
     }
     
     // if this view controller is loaded from a storyboard, imageURL will be nil
