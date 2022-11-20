@@ -30,8 +30,6 @@ public class TwitterCounterVC: UIViewController {
     }
     
     
-    // if this view controller is loaded from a storyboard, imageURL will be nil
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
