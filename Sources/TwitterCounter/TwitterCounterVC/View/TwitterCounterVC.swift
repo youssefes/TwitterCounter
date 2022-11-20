@@ -9,7 +9,10 @@ import UIKit
  
 public class TwitterCounterVC: UIViewController {
 
-    @IBOutlet private weak var tweetTextView: UITextView!
+    @IBOutlet weak var clearbtn: UIButton!
+    
+    @IBOutlet weak private var copyBtn: UIButton!
+    @IBOutlet weak private (set)  var tweetTextView: UITextView!
     @IBOutlet private weak var postTweetBtn: UIButton!
     @IBOutlet private weak var logoIcon: UIImageView!
     @IBOutlet private weak var characterType: CharactersView!
@@ -66,6 +69,9 @@ extension TwitterCounterVC : UITextViewDelegate {
         let text = textView.text ?? ""
         charactersRemain.updateDescription(text: "\(presenter.characterRamainData(text: text))")
         characterType.updateDescription(text: "\(presenter.characterTypeData(text: text)) / \(presenter.cherecterLength)")
+        clearbtn.isEnabled = validText(text: text)
+        copyBtn.isEnabled = validText(text: text)
+        
     }
     
     public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -73,14 +79,16 @@ extension TwitterCounterVC : UITextViewDelegate {
    }
     
     func clearText(text : String){
-        if text.isEmpty {return}
         tweetTextView.text = ""
         characterType.updateDescription(text: "\(presenter.characterTypeData(text: ""))")
         charactersRemain.updateDescription(text: "\(presenter.characterRamainData(text: ""))")
     }
     
     func copyText(text : String){
-        if text.isEmpty {return}
         UIPasteboard.general.string = text
+    }
+    
+    func validText(text : String) -> Bool{
+        return !text.isEmpty
     }
 }

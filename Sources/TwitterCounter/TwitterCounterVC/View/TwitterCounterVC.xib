@@ -18,6 +18,8 @@
             <connections>
                 <outlet property="characterType" destination="fLd-PR-PXL" id="AC2-pi-ywe"/>
                 <outlet property="charactersRemain" destination="aSn-1I-1ku" id="0XJ-kv-DxE"/>
+                <outlet property="clearbtn" destination="P5r-Zn-NYx" id="r2F-SA-iB0"/>
+                <outlet property="copyBtn" destination="8ab-UN-2xD" id="Bvg-U9-Ekx"/>
                 <outlet property="logoIcon" destination="PNf-zS-koQ" id="dLk-x9-ZnF"/>
                 <outlet property="postTweetBtn" destination="6L8-AT-R5L" id="pXP-Iu-QzV"/>
                 <outlet property="tweetTextView" destination="Nzv-Qn-yyU" id="lSA-c9-cG4"/>

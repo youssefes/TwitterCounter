@@ -4,24 +4,26 @@ import XCTest
 
 final class TwitterCounterTests: XCTestCase {
     
-    var twitterCountervc : TwitterCounterVC!
+    var sut : TwitterCounterVC!
     override func setUpWithError() throws {
-        twitterCountervc = TwitterCounterVC()
+        sut = TwitterCounterVC()
+        sut.loadViewIfNeeded()
     }
     
     override func tearDownWithError() throws {
-        twitterCountervc = nil
+        sut = nil
     }
     
     func test_copyText() {
-        let text = "ueyuetyuet"
-        XCTAssertFalse(text.isEmpty)
-        twitterCountervc.copyText(text: text)
+        let text = sut.tweetTextView.text ?? ""
+        XCTAssert(!text.isEmpty)
+        sut.copyText(text: text)
     }
     
     func test_clearText() {
-        let text = "ueyuetyuet"
-        twitterCountervc.clearText(text: text)
+        let text = sut.tweetTextView.text ?? ""
+        XCTAssertFalse(text.isEmpty)
+        sut.clearText(text: text)
     }
     
 }
