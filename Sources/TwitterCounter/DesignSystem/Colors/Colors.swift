@@ -14,12 +14,15 @@ extension DesignSystem {
     enum Colors : String {
         case Main
         case background
+        case copy
         var color : UIColor {
             switch self {
             case .Main:
                 return UIColor.rgb(red: 3, green: 169, blue: 244)
             case .background :
                 return UIColor.rgb(red: 230, green: 246, blue: 254)
+            case .copy :
+                return UIColor.rgb(red: 0, green: 196, blue: 112)
             }
         }
     }

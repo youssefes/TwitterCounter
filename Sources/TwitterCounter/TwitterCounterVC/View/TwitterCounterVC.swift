@@ -69,6 +69,9 @@ extension TwitterCounterVC : UITextViewDelegate {
         let text = textView.text ?? ""
         charactersRemain.updateDescription(text: "\(presenter.characterRamainData(text: text))")
         characterType.updateDescription(text: "\(presenter.characterTypeData(text: text)) / \(presenter.cherecterLength)")
+        clearbtn.backgroundColor = (validText(text: text) ? .red : .red.withAlphaComponent(0.5))
+        
+        copyBtn.backgroundColor = (validText(text: text) ? DesignSystem.Colors.copy.color : DesignSystem.Colors.copy.color.withAlphaComponent(0.5))
         clearbtn.isEnabled = validText(text: text)
         copyBtn.isEnabled = validText(text: text)
         
