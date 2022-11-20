@@ -51,6 +51,13 @@ public class TwitterCounterVC: UIViewController {
         
         tweetTextView.delegate = self
         presenter = TwitterCounterPresenter()
+        
+        clearbtn.backgroundColor = (validText(text: tweetTextView.text ?? "") ? .red : .red.withAlphaComponent(0.5))
+        
+        copyBtn.backgroundColor = (validText(text: tweetTextView.text ?? "") ? DesignSystem.Colors.copy.color : DesignSystem.Colors.copy.color.withAlphaComponent(0.5))
+        clearbtn.isEnabled = validText(text: tweetTextView.text ?? "")
+        copyBtn.isEnabled = validText(text: tweetTextView.text ?? "")
+        
     }
     @IBAction func copyText(_ sender: Any) {
         let text =  tweetTextView.text ?? ""
